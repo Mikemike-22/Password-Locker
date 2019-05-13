@@ -13,6 +13,11 @@ class TestUser(unittest.TestCase):
         setup method to run before each test cases
         '''
         self.new_user = User("twitter","@Michael","12345678")
+    def tearDown(self):
+        '''
+        method that cleans up after each test case has run
+        '''
+        User.user_list=[]
     def test_init(self):
         '''
         test if object is initialized properly
@@ -35,7 +40,6 @@ class TestUser(unittest.TestCase):
         test_user = User("facebook","qwerty","0987654")
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
-
 
 if __name__ == '__main__':
     unittest.main()
