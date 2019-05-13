@@ -1,6 +1,7 @@
 import unittest
 from details import Details
 
+
 class TestDetails(unittest.TestCase):
     '''
     Test class that defines test cases for details behaviours
@@ -62,6 +63,7 @@ class TestDetails(unittest.TestCase):
         test_details.save_details()
         details_exists = Details.details_exist("123@gmail.com")
         self.assertTrue(details_exists)
+
 
 
 
