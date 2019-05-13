@@ -15,3 +15,8 @@ class Details:
         method saves contact objects into details_list
         """
         Details.details_list.append(self)
+    def delete_details(self):
+        """
+        delete method deletes a saved detail
+        """
+        Details.details_list.remove(self)

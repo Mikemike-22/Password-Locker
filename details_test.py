@@ -7,6 +7,12 @@ class TestDetails(unittest.TestCase):
     '''
     def setUp(self):
         self.new_details = Details("mike","korir","123@gmail.com")
+    def tearDown(self):
+        '''
+        method allows cleanup after each tst has run
+        '''
+        Details.details_list =[]
+
     def test_init(self):
         '''
         test to check if object is initialised properly
@@ -29,6 +35,17 @@ class TestDetails(unittest.TestCase):
         test_details = Details("mike","korir","123@mail.com")
         test_details.save_details()
         self.assertEqual(len(Details.details_list),2)
+
+    def test_delete_contact(self):
+        '''
+        tests if we can remove a detail from our details_list
+        '''
+        self.new_details.save_details()
+        test_details = Details("mike","korir","123@gmail.com")
+        test_details.save_details()
+        self.new_details.delete_details()
+        self.assertEqual(len(Details.details_list),1)
+
 
 
 if __name__ =='__main__':
