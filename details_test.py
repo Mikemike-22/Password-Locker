@@ -45,6 +45,15 @@ class TestDetails(unittest.TestCase):
         test_details.save_details()
         self.new_details.delete_details()
         self.assertEqual(len(Details.details_list),1)
+    def test_find_details_by_first_name(self):
+        '''
+        test to check if we can find a detail by first_name
+        '''
+        self.new_details.save_details()
+        test_details = Details("mike","korir","123@gmail.com")
+        found_details = Details.find_by_first_name("mike")
+        self.assertEqual(found_details.email,test_details.email)
+
 
 
 

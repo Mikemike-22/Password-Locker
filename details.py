@@ -20,3 +20,11 @@ class Details:
         delete method deletes a saved detail
         """
         Details.details_list.remove(self)
+    @classmethod
+    def find_by_first_name(cls,first_name):
+        '''
+        method that takes in first name and returns an email
+        '''
+        for details in cls.details_list:
+            if details.first_name == first_name:
+                return details
