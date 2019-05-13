@@ -40,6 +40,16 @@ class TestUser(unittest.TestCase):
         test_user = User("facebook","qwerty","0987654")
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
+    def test_delete_user(self):
+        '''
+        tests if we can remove users form our user_list
+        '''
+        self.new_user.save_user()
+        test_user = User("instagram","mike","345678")
+        test_user.save_contact()
+        self.new_user.delete_user() # delete contact objects
+        self.assertEqual(len(User.user_list),1)
+        
 
 if __name__ == '__main__':
     unittest.main()
