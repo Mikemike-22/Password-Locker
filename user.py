@@ -22,3 +22,12 @@ class User:
         method deletes a saved user from the user_list
         '''
         User.user_list.remove(self)
+
+    @classmethod
+    def find_by_platform(cls,platform):
+        '''
+        method that takes a platform  returns a user_name matching the platform
+        '''
+        for user in cls.user_list:
+            if user.platform == platform:
+                return user
