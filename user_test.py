@@ -46,10 +46,10 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.save_user()
         test_user = User("instagram","mike","345678")
-        test_user.save_contact()
+        test_user.save_user()
         self.new_user.delete_user() # delete contact objects
         self.assertEqual(len(User.user_list),1)
-        
+
 
 if __name__ == '__main__':
     unittest.main()
