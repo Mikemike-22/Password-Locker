@@ -21,6 +21,15 @@ class TestDetails(unittest.TestCase):
         self.new_details.save_details() # saving the new contact
         self.assertEqual(len(Details.details_list),1)
 
+    def test_save_multiple_details(self):
+        '''
+        test to check if we can save multiple details
+        '''
+        self.new_details.save_details()
+        test_details = Details("mike","korir","123@mail.com")
+        test_details.save_details()
+        self.assertEqual(len(Details.details_list),2)
+
 
 if __name__ =='__main__':
     unittest.main()
