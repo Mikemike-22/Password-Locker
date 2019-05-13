@@ -53,6 +53,16 @@ class TestDetails(unittest.TestCase):
         test_details = Details("mike","korir","123@gmail.com")
         found_details = Details.find_by_first_name("mike")
         self.assertEqual(found_details.email,test_details.email)
+    def test_details_exists(self):
+        '''
+        test that returns boolean if the details do not exists
+        '''
+        self.new_details.save_details()
+        test_details = Details("mike","korir","123@gmail.com")
+        test_details.save_details()
+        details_exists = Details.details_exist("123@gmail.com")
+        self.assertTrue(details_exists)
+
 
 
 

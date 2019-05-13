@@ -28,3 +28,12 @@ class Details:
         for details in cls.details_list:
             if details.first_name == first_name:
                 return details
+    @classmethod
+    def details_exist(cls,email):
+        '''
+        method that checks if details exist from the details list
+        '''
+        for details in cls.details_list:
+            if details.email == email:
+                return True
+        return False
