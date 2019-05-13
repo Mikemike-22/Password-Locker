@@ -49,6 +49,15 @@ class TestUser(unittest.TestCase):
         test_user.save_user()
         self.new_user.delete_user() # delete contact objects
         self.assertEqual(len(User.user_list),1)
+    def test_find_user_by_platform(self):
+        '''
+        test to check if we can find a user by platform and display the informatiom
+        '''
+        self.new_user.save_user()
+        test_user = User("github","mike","password")
+        test_user.save_user()
+        found_user = User.find_by_platform("github")
+        self.assertEqual(found_user.user_name,test_user.user_name)
 
 
 if __name__ == '__main__':
