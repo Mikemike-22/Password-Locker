@@ -2,6 +2,7 @@ import unittest # import unittest module
 from user import User # import user class
 
 
+
 class TestUser(unittest.TestCase):
     '''
     Test class defining the test case for user class behaviours
@@ -74,6 +75,7 @@ class TestUser(unittest.TestCase):
         method that returns list of all users saved
         '''
         self.assertEqual(User.display_users(),User.user_list)
+
 
 
 
